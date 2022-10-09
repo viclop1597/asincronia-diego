@@ -1,0 +1,22 @@
+{
+  "name": "asincronia",
+  "version": "1.0.0",
+  "description": "practica de fetch y asincronia generation ch18",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcbcueva/asincronia.git"
+  },
+  "author": "Diego Bonilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcbcueva/asincronia/issues"
+  },
+  "homepage": "https://github.com/dcbcueva/asincronia#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  }
+}
