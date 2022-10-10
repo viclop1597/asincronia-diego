@@ -53,7 +53,7 @@ function usersToLocalStorage(data) {
     localStorage.setItem("userData", JSON.stringify(users)); //To convert object to JSON: JSON.stringify(object)
 }
 
-const printUser = ({ avatar, id, email, first_name, last_name }) => {
+const displayUser = ({ avatar, id, email, first_name, last_name }) => {
     return `<div class="container overflow-hidden text-center my-3">
                 <div class="row align-items-center gy-5">
                     <div class="col md-6 "></div>
@@ -79,8 +79,8 @@ const printUser = ({ avatar, id, email, first_name, last_name }) => {
             </div>`
 }
 
-/* Display function to print all users info */
+// Display function to print all users info 
 function displayUsers(data) {
     const container = document.getElementById("contUser")
-    data.forEach(user => container.innerHTML += printUser(user));
+    data.forEach(user => container.innerHTML += displayUser(user));
 }
