@@ -30,9 +30,9 @@ function spiner() {
 
 // Reading data function to read either from local data or API 
 function readUser() {
-    const user = JSON.parse(localStorage.getItem("users"));
+    const user = JSON.parse(localStorage.getItem("userData"));
     user && user.time > Date.now() ?
-        displayUsers(user.userData) :
+        displayUsers(user.usersData) :
         fetchRequest();
 }
 
