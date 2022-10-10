@@ -38,17 +38,19 @@ function readUser() {
 
 // Fetch function to obtain data from API 
 function fetchRequest() {
-    spiner();
+    spiner(); /* Hace que está cargando el botton */
     fetch(api)
         .then(response => response.json())
         .then(users => {
             usersToLocalStorage(users.data);
             displayUsers(users.data);
         })
-        .catch (error => {
+        .catch (error => { 
             console.log(error);
         })
-    setTimeout(() => btn(), 2400);
+        .finally ( () => {
+            btn(); /* Hace que aparezca el botton de nuevo */
+        })
 }
 
 // Saving data function to save data to local storage 
