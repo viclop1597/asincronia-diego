@@ -1,1 +1,36 @@
 <!-- Practica asincronia -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Usuarios</title>
+</head>
+<body>
+    <div class="container text-center my-3">
+        <h1>Usuarios</h1>
+    </div>
+    <!-- Contenedor de boton -->
+    <div class="container text-center" id="contBtn">
+        <div class="row my-4 justify-content-evenly mx-auto">
+            <div class="col-md-3">
+                <button class="btn btn-outline-info form-control col-md-4" id="btnUser" onclick="readUser()">Obtener usuarios</button>
+            </div>
+        </div>
+    </div>
+    <!-- Contenedor para imprimir a los usuarios -->
+    <div class="container my-4" id="contUser"></div>
+</body>
+<!-- <hr>
+<footer class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p>Copyright© 2022 Ejercicio API Fetch.</p>
+        </div>
+    </div>
+</footer> -->
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./sripts/fetch.js"></script>
+</html>
