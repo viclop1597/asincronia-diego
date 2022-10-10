@@ -33,7 +33,8 @@ function readUser() {
     const user = JSON.parse(localStorage.getItem("userData"));
     user && user.time > Date.now() ?
         displayUsers(user.usersData) :
-        fetchRequest();
+        /* fetchRequest(); */
+        axiosReques();
 }
 
 // Fetch function to obtain data from API 
@@ -53,7 +54,35 @@ function fetchRequest() {
         })
 }
 
-// Saving data function to save data to local storage 
+/* Agregamos la forma de Axios */
+function axiosReques(){
+    spiner(); /* Aparece la imagen de spiner para la espera */
+    axios({ 
+        method: 'get', /* Objeto, con su metodo y url */
+        url: api /* nice, así queda dinamico. */
+    }) 
+    .then(function (response) { /* función anonima */
+        console.log(response);
+        usersToLocalStorage(response.data.data); 
+        displayUsers(response.data.data);
+    })
+    .catch (error => { 
+        console.log(error);
+    })
+    .finally ( () => {
+        btn(); /* Hace que aparezca el botton de nuevo */
+    })
+
+}
+
+
+
+//Esta es la buena forma de guardar comentarios en la funcion
+
+/**
+ * saving data function to save data to local storage
+ * @param {obj} data users
+ */
 function usersToLocalStorage(data) {
     const users = {
         usersData: [...data],
