@@ -1,5 +1,5 @@
 // API to obtain data 
-const api = 'https://reqres.in/api/users?delay=3'
+const api = 'https://reqres.in/api/users?delay=2'
 
 function btn() {
     const container = document.getElementById("contBtn")
@@ -13,22 +13,26 @@ function btn() {
 
 // Spiner function to change the button and show that data is being loading 
 function spiner() {
-    const container = document.getElementById("contBtn")
-    container.innerHTML =
-        `<div class="row my-4 justify-content-evenly mx-auto">
-            <div class="col-md-3">
-                <button class="btn btn-info form-control -md-4" type="button" disabled>
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Cargando...
-            </div>
-        </div>`
+    const container = document.getElementById("contBtn");
+    //const user = JSON.parse(localStorage.getItem("users"));
+    //user && user.time > Date.now() ?
+        //btn():
+        container.innerHTML =
+            `<div class="row my-4 justify-content-evenly mx-auto">
+                <div class="col-md-3">
+                    <button class="btn btn-info form-control -md-4" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Cargando...
+                </div>
+            </div>`
+        //setTimeout(() => btn(), 2300);
 }
 
 // Reading data function to read either from local data or API 
 function readUser() {
     const user = JSON.parse(localStorage.getItem("users"));
     user && user.time > Date.now() ?
-        displayUsers(user.content) :
+        displayUsers(user.userData) :
         fetchRequest();
 }
 
@@ -41,7 +45,7 @@ function fetchRequest() {
             usersToLocalStorage(users.data);
             displayUsers(users.data);
         })
-    setTimeout(() => btn(), 3500);
+    setTimeout(() => btn(), 2400);
 }
 
 // Saving data function to save data to local storage 
@@ -53,7 +57,7 @@ function usersToLocalStorage(data) {
     localStorage.setItem("userData", JSON.stringify(users)); //To convert object to JSON: JSON.stringify(object)
 }
 
-//
+// display constant to display each user
 const displayUser = ({ avatar, id, email, first_name, last_name }) => {
     return `<div class="container overflow-hidden text-center my-3">
                 <div class="row">
