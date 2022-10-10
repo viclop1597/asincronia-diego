@@ -64,17 +64,17 @@ const displayUser = ({ avatar, id, email, first_name, last_name }) => {
                                 <img src="${avatar}" class="rounded-2 mx-auto" style="width: 140px"></img>
                             </div>
                             <div class="col ms-md-auto">
-                                <div class="row-md-3">
-                                    <p class="text-center">First Name: ${first_name}</p>
-                                </div>
-                                <div class="row-md-3">
-                                    <p class="text-center">Last Name: ${last_name}</p>
-                                </div>
                                 <div class="row-md-1">
                                     <p class="text-center">Id: ${id}</p>
                                 </div>
                                 <div class="row-md-4">
                                     <p class="text-center">Email: ${email}</p>
+                                </div>
+                                <div class="row-md-3">
+                                    <p class="text-center">First Name: ${first_name}</p>
+                                </div>
+                                <div class="row-md-3">
+                                    <p class="text-center">Last Name: ${last_name}</p>
                                 </div>
                             </div>
                         </div>
