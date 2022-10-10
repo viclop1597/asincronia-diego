@@ -53,28 +53,33 @@ function usersToLocalStorage(data) {
     localStorage.setItem("userData", JSON.stringify(users)); //To convert object to JSON: JSON.stringify(object)
 }
 
+//
 const displayUser = ({ avatar, id, email, first_name, last_name }) => {
     return `<div class="container overflow-hidden text-center my-3">
-                <div class="row align-items-center gy-5">
-                    <div class="col md-6 "></div>
-                    <div class="col border bg-light md-6 ">
-                        <div class="row-md-9">
-                            <img src="${avatar}" class="rounded-circle mx-auto" style="width: 90px"></img>
-                        </div>
-                        <div class="row-md-3">
-                            <p class="text-center">First Name: ${first_name}</p>
-                        </div>
-                        <div class="row-md-3">
-                            <p class="text-center">Last Name: ${last_name}</p>
-                        </div>
-                        <div class="row-md-1">
-                            <p class="text-center">Id: ${id}</p>
-                        </div>
-                        <div class="row-md-4">
-                            <p class="text-center">Email: ${email}</p>
+                <div class="row">
+                    <div class="col md-3 "></div>
+                    <div class="col-sm-7 bg-light p-3 border">
+                        <div class="row">
+                            <div class="col-md-4 my-2">
+                                <img src="${avatar}" class="rounded-2 mx-auto" style="width: 140px"></img>
+                            </div>
+                            <div class="col ms-md-auto">
+                                <div class="row-md-3">
+                                    <p class="text-center">First Name: ${first_name}</p>
+                                </div>
+                                <div class="row-md-3">
+                                    <p class="text-center">Last Name: ${last_name}</p>
+                                </div>
+                                <div class="row-md-1">
+                                    <p class="text-center">Id: ${id}</p>
+                                </div>
+                                <div class="row-md-4">
+                                    <p class="text-center">Email: ${email}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col md-6 "></div>
+                    <div class="col md-3 "></div>
                 </div>
             </div>`
 }
